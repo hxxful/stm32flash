@@ -144,7 +144,7 @@ int main(int argc, char* argv[]) {
         /*
          * Reset the device to the boot monitor
          */
-        serial_reset(serial, 0);
+        serial_reset(serial, 1);
 #endif
 
 	printf("Serial Config: %s\n", serial_get_setup_str(serial));

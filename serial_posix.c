@@ -259,8 +259,8 @@ serial_err_t serial_reset(const serial_t *serial, int dtr) {
     if (err)
         return SERIAL_ERR_SYSTEM;
 
-    // Let it boot: Raise the RTS
-    state &= ~TIOCM_RTS;
+    // Let it boot: Lower the DTR
+    state |= TIOCM_DTR;
     err = ioctl(serial->fd, TIOCMSET, &state);
     if (err)
         return SERIAL_ERR_SYSTEM;
